@@ -1,6 +1,6 @@
 {
 	"name": "tomzx/dataflow",
-	"description": "PHP Composer Template",
+	"description": "A dataflow processor library",
 	"type": "library",
 	"keywords": [
 		"dataflow",
