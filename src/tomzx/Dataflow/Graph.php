@@ -6,6 +6,11 @@ use tomzx\Dataflow\Processor\Processor;
 
 class Graph {
 	/**
+	 * @var \tomzx\Dataflow\Processor\Processor
+	 */
+	private $processor;
+
+	/**
 	 * @param array                               $nodes
 	 * @param \tomzx\Dataflow\Processor\Processor $processor
 	 */

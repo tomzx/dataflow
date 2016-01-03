@@ -31,7 +31,6 @@ class Job extends Threaded {
 	 */
 	public function run()
 	{
-		// var_dump($this->node, $this->arguments);
 		// Must cast to array since it is a Volatile
 		call_user_func_array([$this->node, 'process'], (array)$this->arguments);
 	}
