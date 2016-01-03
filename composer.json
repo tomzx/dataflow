@@ -1,0 +1,50 @@
+{
+	"name": "tomzx/dataflow",
+	"description": "PHP Composer Template",
+	"type": "library",
+	"keywords": [
+		"dataflow",
+		"stream",
+		"reactive",
+		"dataflow programming",
+		"stream programming",
+		"reactive programming"
+	],
+	"homepage": "https://github.com/tomzx/dataflow",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Tom Rochette",
+			"email": "tom@tomrochette.com",
+			"homepage": "http://www.tomrochette.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/tomzx/dataflow/issues"
+	},
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4",
+		"mockery/mockery": "~0.9"
+	},
+	"suggest": {
+		"ext-pthreads": "Allows parallel execution."
+	},
+	"autoload": {
+		"psr-4": {
+			"tomzx\\Dataflow\\": "src/tomzx/Dataflow"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"tomzx\\Dataflow\\Test\\": "tests/tomzx/Dataflow"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1-dev"
+		}
+	}
+}
