@@ -83,7 +83,8 @@ $pipeline->process('Test ');
 
 // May also be built using the Graph class
 
-$graph = new Graph($stages);
+$graph = new Graph($stages, new Sequential);
+// or $graph = new Graph($stages, new Parallel);
 
 $results = $graph->process('Test ');
 
@@ -101,6 +102,14 @@ $result->output(5);
 // Returns Test 12 Test 1356
 $result->output(6);
 ```
+
+## Processors
+
+In order to process your graph, you are provided with two processors: a `Sequential` processor and a `Parallel` processor.
+
+The `Sequential` processor takes a graph and turns it into a sequence of operations to accomplish. It basically will compute the graph dependencies and ensure that those dependencies are resolved by the time each stage is to be executed. With the `Sequential` processor, only a single task may be executed at a time.
+
+The `Parallel` processor is useful when many tasks can be executed in parallel. Similar to the `Sequential` processor, it will validate that the given graph can be resolved. Then, it will execute all the tasks that can be executed in parallel at the same time. On a multi-core processor, it is expected that the `Parallel` processor will complete faster if it is given parallelizable tasks.
 
 ## License
 
