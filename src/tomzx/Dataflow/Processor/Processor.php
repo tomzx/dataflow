@@ -21,6 +21,7 @@ abstract class Processor {
 	}
 
 	/**
+	 * @param array $arguments
 	 * @return \tomzx\Dataflow\Result
 	 */
 	public function process(array $arguments)

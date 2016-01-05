@@ -8,6 +8,9 @@ class Result {
 	 */
 	private $nodes = [];
 
+	/**
+	 * @param array $nodes
+	 */
 	public function __construct(array $nodes)
 	{
 		$this->nodes = $nodes;
@@ -15,7 +18,7 @@ class Result {
 
 	/**
 	 * @param int|string $nodeIndex
-	 * @return null
+	 * @return mixed|null
 	 */
 	public function output($nodeIndex)
 	{
