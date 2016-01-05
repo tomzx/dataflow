@@ -140,4 +140,21 @@ class GraphTest extends \PHPUnit_Framework_TestCase {
 		$this->assertSame(0x0101, $results->output(3));
 		$this->assertSame(0x1111, $results->output(4));
 	}
+
+	public function testGraphIndexesCanBeStrings()
+	{
+		$graph = [
+			'A' => [function($a) { return $a | 0x1; }],
+			'B' => [function($a) { return $a | 0x10; }, 'A'],
+			'C' => [function($a) { return $a | 0x100; }, 'B'],
+		];
+
+		$graph = new Graph($graph, new Sequential());
+		$this->assertNotNull($graph);
+
+		$results = $graph->process(0);
+		$this->assertSame(0x001, $results->output('A'));
+		$this->assertSame(0x011, $results->output('B'));
+		$this->assertSame(0x111, $results->output('C'));
+	}
 }
